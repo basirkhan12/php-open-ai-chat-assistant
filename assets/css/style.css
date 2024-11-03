@@ -1,0 +1,212 @@
+ body {
+            background-color: var(--background-color) !important;
+            margin: 0;
+            padding: 0;
+        }
+        :root {
+            --font-family: 'Raleway', sans-serif;
+            --background-color: #02141B;
+            --primary-btn-color: #EF0554;
+            --hover-btn-color: #FECB1B;
+            --secondry-btn-color: #FF9900;
+            --text-color: #fff;
+            --input-border-color: rgba(255, 255, 255, 0.2);
+            --input-border-color-focus: rgba(255, 255, 255, 0.4);
+            --separator-color: #ccc;
+            --glow-color: rgba(7, 152, 254, 0.2);
+            --glow-fade: rgba(7, 152, 254, 0);
+            --backgroud-tranferent-color:#FFFFFF0A;
+            --link-color: #12C6F0;
+        
+        }
+        
+        .glow {
+            width: 60vh;
+            height: 80vh;
+            position: fixed;
+            border-radius: 50%;
+            background: radial-gradient(46.24% 46.24% at 50% 46.13%, var(--glow-color) 0%, var(--glow-fade) 100%);
+            filter: blur(32px);
+        }
+        
+        .glow.left {
+            left: -5%;
+            top: auto;
+            bottom: auto;
+        }
+        
+        .glow.right {
+            right: -5%;
+            top: auto;
+            bottom: auto;
+        }
+        
+        
+        @media (max-width: 768px) {
+            .glow {
+                width: 40%;
+                height: 60%;
+            }
+        
+            .glow.left {
+                left: 0%;
+            }
+        
+            .glow.right {
+                right: 0%;
+            }
+            
+        }
+
+        .accordion {
+            --bs-accordion-color: var(--text-color);
+            --bs-accordion-bg: var(--backgroud-tranferent-color);
+            --bs-accordion-btn-bg: var(--backgroud-tranferent-color);
+            --bs-accordion-btn-color: var(--text-color);
+            --bs-accordion-border-color: var(--separator-color);
+            --bs-accordion-btn-focus-border-color: var(--separator-color);
+            --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+            --bs-accordion-body-padding-x: 1.25rem;
+            --bs-accordion-body-padding-y: 1rem;
+            --bs-accordion-active-color: #fff;
+            --bs-accordion-active-bg: var(--primary-btn-color);
+            --bs-accordion-btn-icon:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>")
+        }
+         .accordion-button:not(.collapsed)::after {
+            background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='white'><path fill-rule='black' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>")!important;
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: var(--text-color) !important;
+
+        }
+
+        
+
+       
+
+        .chat-container {
+            display: flex;
+            flex-direction: column;
+            background-color: var(--backgroud-tranferent-color);
+            border: snow solid 1px;
+            border-radius: 13px;
+            /* box-shadow: 1px 1px 12px 3px rgb(7 152 254 / 58%);*/
+            overflow: hidden;
+            position: sticky;
+            top: 140px;
+        }
+
+        .chat-window {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            padding: 20px;
+            overflow-y: auto;
+            border-bottom: 1px solid #ddd;
+            height: 500px;
+            max-height: 60vh;
+            scrollbar-width: thin;
+            /* For Firefox */
+            scrollbar-color: var(--primary-btn-color) var(--background-color);
+            /* For Firefox */
+        }
+
+        .page-content a,.page-content a:focus,.page-content a:hover{
+            color: var(--link-color)!important;
+        }
+
+        .chat-window p {
+            margin-bottom: 0px;
+        }
+
+        /* Scrollbar for chat window */
+        .chat-window::-webkit-scrollbar {
+            width: 8px;
+            background-color: var(--background-color);
+        }
+
+
+        .chat-window::-webkit-scrollbar-track {
+            background-color: var(--background-color);
+        }
+
+        .chat-window::-webkit-scrollbar-thumb {
+            background-color: var(--primary-btn-color);
+            border-radius: 10px;
+            border: 2px solid var(--background-color);
+        }
+
+        .chat-window::-webkit-scrollbar-thumb:hover {
+            background-color: var(--hover-btn-color);
+        }
+
+        .message {
+            margin-bottom: 15px;
+            display: inline-block;
+            padding: 10px;
+            border-radius: 10px;
+            max-width: 70%;
+        }
+
+        .message.user {
+            align-self: end;
+            background-color: var(--secondry-btn-color);
+            color: #000;
+        }
+
+        .message.assistant {
+            text-align: left;
+            background-color: var(--primary-btn-color);
+            color: #fff;
+        }
+
+        .chat-input {
+            display: flex;
+            padding: 10px;
+
+            border-top: 1px solid #ddd;
+        }
+
+        .chat-input input {
+            flex-grow: 1;
+            padding: 15px;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            background-color: var(--backgroud-tranferent-color);
+            border-radius: 5px;
+            color: var(--text-color);
+        }
+
+        .chat-input input:focus {
+            border-color: var(--input-border-color-focus);
+        }
+
+        .chat-input button {
+            padding: 15px;
+            background-color: var(--primary-btn-color);
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-left: 10px;
+            border-radius: 5px;
+        }
+
+        .chat-input button:hover {
+            background-color: var(--hover-btn-color);
+        }
+
+
+      
+        .chat-header{
+           background-color: #448ef6!important;
+           font-weight: 700 !important;
+           width: 100%; 
+           text-align: center; 
+           border-bottom: 1px solid #ccc;
+           padding:6px;
+           color:#fff;
+        }
