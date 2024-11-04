@@ -71,6 +71,8 @@ To set up the project locally, follow these steps:
 ├── assets/
 │   ├── css/
 │   │   └── style.css       # Custom styles for the application
+|   ├── js
+|   |   └──requester.js     # Js script for sending request to chatbot_backend.php
 │   └── sounds/
 │       └── reply.m4a      # Notification sound for chat replies
 └── data/
